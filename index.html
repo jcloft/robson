@@ -28,7 +28,7 @@
       container: 'map',
       // Replace YOUR_STYLE_URL with your style URL.
       style: 'mapbox://styles/l0ftzilla/cl5b8q6e5001f14nxva1md4rc', 
-      center: [-87.661557, 41.893748],
+      center: [-112.351835, 33.703967],
       zoom: 10.7
     });
 
@@ -40,7 +40,7 @@
         map.on('click', (event) => {
           // If the user clicked on one of your markers, get its information.
           const features = map.queryRenderedFeatures(event.point, {
-            layers: ['RobsonLocations'] // replace with your layer name
+            layers: ['robsonlocations'] // replace with your layer name
           });
           if (!features.length) {
             return;
