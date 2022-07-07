@@ -17,6 +17,46 @@
         bottom: 0; 
         width: 100%; 
       }
+        .mapboxgl-popup {
+           
+            width:200px;
+            border-radius: 5;
+        }
+        .mapboxgl-popup-content {
+            color: #002868;
+            background-color:rgba(255, 255, 255, 0.7);
+            text-align: left;
+            border: 2px solid  #002868;
+        }
+        .mapboxgl-popup-content h3 {
+            font-family: futura-bold;
+        }
+                a.button1{
+         display:inline-block;
+         padding:0.35em 1.2em;
+         border:2px solid #c02033;
+         margin:0 0.3em 0.3em 0;
+         border-radius:0.12em;
+         box-sizing: border-box;
+         text-decoration:none;
+         font-family:'Roboto',sans-serif;
+         font-weight:600;
+         color:#fff;
+         text-align:center;
+         transition: all 0.2s;
+        background: #c02033;
+        }
+        a.button1:hover{
+         color:#fff;
+         background-color:#c02033;
+        }
+        @media all and (max-width:30em){
+         a.button1{
+          display:block;
+          margin:0.4em auto;
+         }
+        }
+        
     </style>
   </head>
   <body>
@@ -29,7 +69,7 @@
       // Replace YOUR_STYLE_URL with your style URL.
       style: 'mapbox://styles/l0ftzilla/cl5b8q6e5001f14nxva1md4rc', 
       center: [-112.351835, 33.703967],
-      zoom: 10.7
+      zoom: 5
     });
 
     // Code from the next step will go here.
@@ -55,7 +95,7 @@
         const popup = new mapboxgl.Popup({ offset: [0, -15] })
           .setLngLat(feature.geometry.coordinates)
           .setHTML(
-            `<h3>${feature.properties.City},</h3><h3>${feature.properties.State},${feature.properties.Date}:</h3><a href='${feature.properties.Link}'><p>Link</p>`
+              `<h3>${feature.properties.City}, ${feature.properties.State}</h3><h3>${feature.properties.Date}</h3><a href='${feature.properties.Link}' class='button1'>See Karrin's Visit`
           )
           .addTo(map);
         });
